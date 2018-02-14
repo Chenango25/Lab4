@@ -77,7 +77,7 @@ public class Colosseum {
         Pokemon tempPokemon = new Pokemon();
         int hpstat = myScan.nextInt();
         if (hpstat <= MAX_HIT_POINTS && hpstat >= 1) {
-            int hitpoint = hpstat;
+            tempPokemon.hitPoints = hpstat;
         }
         while (hpstat >= MAX_HIT_POINTS || hpstat <=0) {
             System.out.println("Sorry, the hitpoint value must be between 1 and 50");
@@ -85,7 +85,7 @@ public class Colosseum {
         }
         int atkstat = myScan.nextInt();
         if (atkstat <= MAX_HIT_POINTS && atkstat >= 1) {
-            int atk = atkstat;
+            tempPokemon.attackLevel = atkstat;
         }
         while (atkstat >= MAX_HIT_POINTS || atkstat <=0) {
             System.out.println("Sorry, the atk point must be between 1 and 50");
@@ -93,16 +93,13 @@ public class Colosseum {
         }
         int defstat = myScan.nextInt();
         if (defstat <= (MAX_HIT_POINTS - atkstat) && defstat >= 1) {
-            int def = defstat;
+            tempPokemon.defenseLevel = defstat;
         }
         while (atkstat >= (MAX_HIT_POINTS - atkstat) || atkstat <= 0) {
             System.out.println("Sorry, the def point must be between 1 and " + (MAX_HIT_POINTS - atkstat));
             atkstat = myScan.nextInt();
         }
-
-
         return tempPokemon;
-
 }
 
     /**
